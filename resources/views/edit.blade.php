@@ -1,30 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Pegawai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <div class="text-start mb-4">
+            <h5 class="text-dark">Muhammad Ariq Alwin - 5026221177</h5>
+            <h3 class="text-dark">Edit Data Pegawai</h3>
+        </div>
 
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Edit Pegawai</h3>
+        <!-- Back Button -->
+        <a href="/pegawai" class="btn btn-secondary mb-3">Kembali</a>
 
-	<a href="/pegawai"> Kembali</a>
+        <!-- Form Section -->
+        <form action="/pegawai/update/{{ $pegawai->pegawai_id }}" method="post" class="row g-3" style="max-width: 600px;">
+            {{ csrf_field() }}
+            <div class="col-md-6">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" name="nama" id="nama" class="form-control" value="{{ $pegawai->pegawai_nama }}" required>
+            </div>
+            <div class="col-md-6">
+                <label for="jabatan" class="form-label">Jabatan</label>
+                <input type="text" name="jabatan" id="jabatan" class="form-control" value="{{ $pegawai->pegawai_jabatan }}" required>
+            </div>
+            <div class="col-md-6">
+                <label for="umur" class="form-label">Umur</label>
+                <input type="number" name="umur" id="umur" class="form-control" value="{{ $pegawai->pegawai_umur }}" required>
+            </div>
+            <div class="col-md-12">
+                <label for="alamat" class="form-label">Alamat</label>
+                <textarea name="alamat" id="alamat" class="form-control" rows="3" required>{{ $pegawai->pegawai_alamat }}</textarea>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            </div>
+        </form>
+    </div>
 
-	<br/>
-	<br/>
-
-	@foreach($pegawai as $p)
-	<form action="/pegawai/update" method="post">
-		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->pegawai_id }}"> <br/>
-		Nama <input type="text" required="required" name="nama" value="{{ $p->pegawai_nama }}"> <br/>
-		Jabatan <input type="text" required="required" name="jabatan" value="{{ $p->pegawai_jabatan }}"> <br/>
-		Umur <input type="number" required="required" name="umur" value="{{ $p->pegawai_umur }}"> <br/>
-		Alamat <textarea required="required" name="alamat">{{ $p->pegawai_alamat }}</textarea> <br/>
-		<input type="submit" value="Simpan Data">
-	</form>
-	@endforeach
-
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</
