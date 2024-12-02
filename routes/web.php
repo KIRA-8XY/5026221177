@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
 });
+
 
 Route::get('pages/blog', function () {
     return view('pages/blog');
@@ -80,4 +81,4 @@ Route::get('/modem/editModem/{id}','App\Http\Controllers\ModemController@edit');
 Route::get('/modem/hapus/{id}','App\Http\Controllers\ModemController@hapus');
 Route::get('/modem/cari','App\Http\Controllers\ModemController@cari');
 
-
+Route::get('/counter','App\Http\Controllers\CounterController@index');

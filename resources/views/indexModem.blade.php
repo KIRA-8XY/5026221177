@@ -3,8 +3,9 @@
 @section('tulisan1','Modem')
 
 @section('link1')
-	<a href="/modem/tambahModem"class="btn btn-primary"> + Tambah Modem Baru</a>
-    <br>
+    <a href="/modem/tambah" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Tambah Modem Baru
+    </a>
 @endsection
 
 @section('konten')
@@ -62,3 +63,13 @@
     </div>
 
  @endsection
+
+ {{-- Flowchart Logika
+Start: Mulai proses.
+Koneksi ke Database: Buat koneksi ke database MySQL dengan tabel pagecounter.
+Query Update: Lakukan query untuk menambahkan nilai kolom Jumlah dengan angka 1.
+UPDATE pagecounter SET Jumlah = Jumlah + 1 WHERE ID = 1;
+Query Read: Ambil nilai terbaru dari kolom Jumlah setelah di-update.
+SELECT Jumlah FROM pagecounter WHERE ID = 1;
+Display Nilai: Tampilkan nilai Jumlah pada halaman web.
+End: Akhiri proses. --}}
