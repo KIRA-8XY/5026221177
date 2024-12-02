@@ -71,3 +71,13 @@ Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiDBController@edit')
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiDBController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiDBController@hapus');
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiDBController@cari');
+
+Route::get('/modem','App\Http\Controllers\ModemController@index');
+Route::get('/modem/tambahModem','App\Http\Controllers\ModemController@tambah');
+Route::post('/modem/store','App\Http\Controllers\ModemController@store');
+Route::post('/modem/update','App\Http\Controllers\ModemController@update');
+Route::get('/modem/editModem/{id}','App\Http\Controllers\ModemController@edit');
+Route::get('/modem/hapus/{id}','App\Http\Controllers\ModemController@hapus');
+Route::get('/modem/cari','App\Http\Controllers\ModemController@cari');
+
+
