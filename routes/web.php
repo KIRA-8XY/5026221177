@@ -82,3 +82,10 @@ Route::get('/modem/hapus/{id}','App\Http\Controllers\ModemController@hapus');
 Route::get('/modem/cari','App\Http\Controllers\ModemController@cari');
 
 Route::get('/counter','App\Http\Controllers\CounterController@index');
+Route::get('/karyawan', 'App\Http\Controllers\KaryawanController@index');
+
+Route::get('/karyawan', 'App\Http\Controllers\KaryawanController@index');
+Route::get('/karyawan/tambah', 'App\Http\Controllers\KaryawanController@tambah');
+Route::post('/karyawan/store', 'App\Http\Controllers\KaryawanController@store');
+Route::get('/karyawan/hapus/{id}', 'App\Http\Controllers\KaryawanController@hapus');
+Route::post('/karyawan/update', 'App\Http\Controllers\KaryawanController@update');
